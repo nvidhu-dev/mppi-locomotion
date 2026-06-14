@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mppi-locomotion"
+version = "0.1.0"
+description = "Sampling-based MPC (MPPI / Predictive Sampling) on the true MuJoCo simulator, with easily swappable bodies (DM-Control walker and Unitree Go2)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "dm_control>=1.0.41",
+    # mujoco 3.9.x renamed an internal field dm_control's indexer still expects.
+    "mujoco>=3.8.1,<3.9",
+    "numpy",
+    "imageio[ffmpeg]",
+    # Fetches the Unitree Go2 model from MuJoCo Menagerie (for the `go2` domain).
+    "robot_descriptions",
+]
+
+[project.scripts]
+mppi-locomotion = "mppi.cli:main"
+
+[tool.setuptools]
+packages = ["mppi"]

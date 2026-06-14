@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.env
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Generated videos (keep the committed demos under media/)
+*.mp4
+!media/walker_mppi.mp4
+!media/go2_walk.mp4
